@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/main.css';
 import {
-    HashRouter,
+    BrowserRouter as Router,
     Routes,
     Route
 } from "react-router-dom";
@@ -13,7 +13,7 @@ export const history = createBrowserHistory()
 
 function App() {
     return ( 
-        <HashRouter history = { history } >
+        <Router history = { history } >
         {
                 /* A <Routes> looks through its children <Route>s and
                             renders the first one that matches the current URL. */
@@ -22,7 +22,7 @@ function App() {
                 <Route path = "/viewcurrentemployees" element = { < ViewCurrentEmployees / > } /> 
                 <Route path = "/" element = { < Home / > } /> 
             </Routes> 
-        </HashRouter>
+        </Router>
     );
 }
 
