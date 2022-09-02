@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { Controller, useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import DatePicker, { registerLocale } from "react-datepicker";
@@ -9,6 +9,7 @@ import Select from "react-select";
 import states from '../data/state'
 import { useSelector, useDispatch } from 'react-redux'
 import { employees } from '../actions/index'
+import history from '../App'
 
 registerLocale("fr", fr); // register it with the name you want
 
@@ -26,11 +27,11 @@ function Home() {
   states.map((n, index) => {
     return statesArray.push({ value: n.name, label: n.name })
   })
-
   const onSubmit = data => {
     //localStorage.setItem('employees', JSON.stringify(data))
     //localStorage.removeItem('employees')
     dispatch(employees(data))
+    history.push('/viewcurrentemployees')
   }
 
   return (
