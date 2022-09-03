@@ -21,6 +21,9 @@ function App() {
             <Routes >
                 <Route path = "/viewcurrentemployees" element = { < ViewCurrentEmployees / > } /> 
                 <Route path = "/" element = { < Home / > } /> 
+                <Route path='*'>
+                    <NotFound />
+                </Route>
             </Routes> 
         </Router>
     );
