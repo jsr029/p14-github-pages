@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home';
 import ViewCurrentEmployees from './pages/ViewCurrentEmployees';
 import { createBrowserHistory } from 'history'
+import NotFound from './components/NotFound';
 
 export const history = createBrowserHistory()
 
