@@ -23,7 +23,7 @@ const store = createStore(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter>
+      <HashRouter basename='/'>
         <App />
       </HashRouter>
     </Provider>
